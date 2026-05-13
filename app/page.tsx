@@ -19,9 +19,9 @@ const landscape: MapGroup[] = [
     title: "Grundlagen & Mindset",
     subtitle: "Was Kryptografie überhaupt löst – und wovon sie nicht schützt.",
     items: [
-      { label: "Was ist Kryptografie?", soon: true, note: "Vertraulichkeit · Integrität · Authentizität" },
-      { label: "Angreifer-Modelle & Kerckhoffs-Prinzip", soon: true },
-      { label: "Zufall & Entropie – warum schlechter Zufall alles bricht", soon: true },
+      { label: "Was ist Kryptografie?", href: "/lektionen/einleitung", note: "Vertraulichkeit · Integrität · Authentizität" },
+      { label: "Angreifer-Modelle & Kerckhoffs-Prinzip", href: "/lektionen/kerckhoffs" },
+      { label: "Zufall & Entropie", href: "/lektionen/entropie", note: "warum schlechter Zufall alles bricht" },
     ],
   },
   {
@@ -31,16 +31,16 @@ const landscape: MapGroup[] = [
       { label: "Caesar-Cipher", href: "/lektionen/caesar" },
       { label: "XOR-Verschlüsselung", href: "/lektionen/xor" },
       { label: "Häufigkeitsanalyse", href: "/lektionen/frequenz" },
-      { label: "Enigma & One-Time-Pad", soon: true },
+      { label: "Enigma & One-Time-Pad", href: "/lektionen/enigma-otp" },
     ],
   },
   {
     title: "Symmetrische Krypto",
     subtitle: "Ein gemeinsames Geheimnis – wie tauscht man es aus?",
     items: [
-      { label: "Symmetrisch vs. asymmetrisch", soon: true, note: "die Grundunterscheidung" },
-      { label: "Block- vs. Stromchiffren, AES", soon: true },
-      { label: "Betriebsmodi: CBC, CTR, GCM & Padding", soon: true },
+      { label: "Symmetrisch vs. asymmetrisch", href: "/lektionen/symm-asymm", note: "die Grundunterscheidung" },
+      { label: "AES", href: "/lektionen/aes", note: "die wichtigste Blockchiffre" },
+      { label: "Betriebsmodi: CBC, CTR, GCM & Padding", href: "/lektionen/modi" },
     ],
   },
   {
@@ -49,8 +49,8 @@ const landscape: MapGroup[] = [
     items: [
       { label: "Diffie-Hellman", href: "/lektionen/diffie-hellman" },
       { label: "RSA", href: "/lektionen/rsa" },
-      { label: "Digitale Signaturen", soon: true, note: "Hash + asymmetrische Krypto kombiniert" },
-      { label: "Elliptische Kurven (ECC)", soon: true },
+      { label: "Elliptische Kurven (ECC)", href: "/lektionen/ecc" },
+      { label: "Digitale Signaturen", href: "/lektionen/signaturen", note: "Hash + asymmetrische Krypto kombiniert" },
     ],
   },
   {
@@ -59,17 +59,17 @@ const landscape: MapGroup[] = [
     items: [
       { label: "Hash-Funktionen (SHA-256)", href: "/lektionen/hash" },
       { label: "HMAC", href: "/lektionen/hmac" },
-      { label: "Passwort-Hashing (bcrypt, Argon2)", soon: true },
-      { label: "Merkle-Bäume & Blockchains", soon: true },
+      { label: "Passwort-Hashing (bcrypt, Argon2)", href: "/lektionen/passwort" },
+      { label: "Merkle-Bäume & Blockchains", href: "/lektionen/merkle" },
     ],
   },
   {
     title: "Protokolle & Anwendung",
     subtitle: "Wo das alles im echten Internet auftaucht.",
     items: [
+      { label: "TLS, Zertifikate & PKI", href: "/lektionen/tls" },
       { label: "OAuth 2.0", href: "/lektionen/oauth" },
-      { label: "TLS, Zertifikate & PKI", soon: true },
-      { label: "Post-Quantum-Krypto", soon: true, note: "kurzer Ausblick" },
+      { label: "Post-Quantum-Krypto", href: "/lektionen/post-quantum", note: "Ausblick auf die nächste Generation" },
     ],
   },
 ];

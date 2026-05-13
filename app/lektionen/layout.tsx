@@ -7,26 +7,54 @@ export const metadata: Metadata = {
 
 const groups = [
   {
+    title: "Grundlagen",
+    items: [
+      { slug: "einleitung", label: "Was ist Kryptografie?", icon: "📖" },
+      { slug: "kerckhoffs", label: "Angreifer & Kerckhoffs", icon: "🎯" },
+      { slug: "entropie", label: "Zufall & Entropie", icon: "🎲" },
+    ],
+  },
+  {
     title: "Klassisch",
     items: [
       { slug: "caesar", label: "Caesar-Cipher", icon: "🔡" },
       { slug: "xor", label: "XOR-Verschlüsselung", icon: "⊕" },
       { slug: "frequenz", label: "Häufigkeitsanalyse", icon: "📊" },
+      { slug: "enigma-otp", label: "Enigma & OTP", icon: "⚙️" },
     ],
   },
   {
-    title: "Modern",
+    title: "Symmetrisch",
+    items: [
+      { slug: "symm-asymm", label: "Symm. vs. asymm.", icon: "⚖️" },
+      { slug: "aes", label: "AES", icon: "🧱" },
+      { slug: "modi", label: "Betriebsmodi", icon: "🔁" },
+    ],
+  },
+  {
+    title: "Asymmetrisch",
+    items: [
+      { slug: "diffie-hellman", label: "Diffie-Hellman", icon: "🔑" },
+      { slug: "rsa", label: "RSA", icon: "🔐" },
+      { slug: "ecc", label: "Elliptische Kurven", icon: "🌐" },
+      { slug: "signaturen", label: "Signaturen", icon: "✍️" },
+    ],
+  },
+  {
+    title: "Hashes & Integrität",
     items: [
       { slug: "hash", label: "Hash-Funktionen", icon: "#️⃣" },
       { slug: "hmac", label: "HMAC", icon: "🛡️" },
-      { slug: "diffie-hellman", label: "Diffie-Hellman", icon: "🔑" },
-      { slug: "rsa", label: "RSA", icon: "🔐" },
+      { slug: "passwort", label: "Passwort-Hashing", icon: "🔒" },
+      { slug: "merkle", label: "Merkle & Blockchain", icon: "🌳" },
     ],
   },
   {
     title: "Anwendung",
     items: [
+      { slug: "tls", label: "TLS & PKI", icon: "🔏" },
       { slug: "oauth", label: "OAuth 2.0", icon: "🪪" },
+      { slug: "post-quantum", label: "Post-Quantum", icon: "⚛️" },
       { slug: "quiz", label: "Quiz", icon: "🧪" },
     ],
   },
