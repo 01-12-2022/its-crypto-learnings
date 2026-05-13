@@ -5,72 +5,38 @@ export const metadata: Metadata = {
   title: "Kryptografie Lektionen",
 };
 
-const groups = [
-  {
-    title: "Klassisch",
-    items: [
-      { slug: "caesar", label: "Caesar-Cipher", icon: "🔡" },
-      { slug: "xor", label: "XOR-Verschlüsselung", icon: "⊕" },
-      { slug: "frequenz", label: "Häufigkeitsanalyse", icon: "📊" },
-    ],
-  },
-  {
-    title: "Modern",
-    items: [
-      { slug: "hash", label: "Hash-Funktionen", icon: "#️⃣" },
-      { slug: "hmac", label: "HMAC", icon: "🛡️" },
-      { slug: "diffie-hellman", label: "Diffie-Hellman", icon: "🔑" },
-      { slug: "rsa", label: "RSA", icon: "🔐" },
-    ],
-  },
-  {
-    title: "Anwendung",
-    items: [
-      { slug: "oauth", label: "OAuth 2.0", icon: "🪪" },
-      { slug: "quiz", label: "Quiz", icon: "🧪" },
-    ],
-  },
+const lessons = [
+  { slug: "caesar", label: "Caesar-Cipher", icon: "🔡" },
+  { slug: "xor", label: "XOR-Verschlüsselung", icon: "⊕" },
+  { slug: "frequenz", label: "Häufigkeitsanalyse", icon: "📊" },
+  { slug: "quiz", label: "Quiz", icon: "🧪" },
 ];
 
 export default function LektionenLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen bg-white">
-      <nav className="w-64 shrink-0 border-r border-zinc-200 bg-zinc-50 p-4">
+    <div className="flex min-h-screen">
+      <nav className="w-60 shrink-0 border-r border-zinc-200 bg-zinc-50 p-4">
         <div className="mb-6 border-b border-zinc-200 pb-4">
-          <Link
-            href="/"
-            className="text-sm font-medium text-zinc-600 hover:text-zinc-900"
-          >
+          <Link href="/" className="text-sm text-zinc-500 hover:text-zinc-800">
             ← Übersicht
           </Link>
-          <h2 className="mt-2 text-base font-bold text-zinc-900">Lektionen</h2>
+          <h2 className="mt-2 text-base font-semibold text-zinc-800">Lektionen</h2>
         </div>
-        <div className="flex flex-col gap-5">
-          {groups.map((g) => (
-            <div key={g.title}>
-              <div className="mb-1.5 px-3 text-[11px] font-bold tracking-wider text-zinc-500 uppercase">
-                {g.title}
-              </div>
-              <ul className="flex flex-col gap-0.5">
-                {g.items.map((l) => (
-                  <li key={l.slug}>
-                    <Link
-                      href={`/lektionen/${l.slug}`}
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-white hover:text-zinc-950"
-                    >
-                      <span className="w-5 text-center">{l.icon}</span>
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <ul className="flex flex-col gap-1">
+          {lessons.map((l) => (
+            <li key={l.slug}>
+              <Link
+                href={`/lektionen/${l.slug}`}
+                className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900"
+              >
+                <span className="w-5 text-center">{l.icon}</span>
+                {l.label}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </nav>
-      <main className="flex-1 px-10 py-10">
-        <div className="mx-auto max-w-3xl">{children}</div>
-      </main>
+      <main className="flex-1 p-10 max-w-3xl">{children}</main>
     </div>
   );
 }
