@@ -62,21 +62,21 @@ const groups = [
 
 export default function LektionenLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen bg-white">
-      <nav className="w-64 shrink-0 border-r border-zinc-200 bg-zinc-50 p-4">
-        <div className="mb-6 border-b border-zinc-200 pb-4">
+    <div className="flex min-h-screen bg-white dark:bg-zinc-950">
+      <nav className="w-64 shrink-0 border-r border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="mb-6 border-b border-zinc-200 pb-4 dark:border-zinc-800">
           <Link
             href="/"
-            className="text-sm font-medium text-zinc-600 hover:text-zinc-900"
+            className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
           >
             ← Übersicht
           </Link>
-          <h2 className="mt-2 text-base font-bold text-zinc-900">Lektionen</h2>
+          <h2 className="mt-2 text-base font-bold text-zinc-900 dark:text-zinc-100">Lektionen</h2>
         </div>
         <div className="flex flex-col gap-5">
           {groups.map((g) => (
             <div key={g.title}>
-              <div className="mb-1.5 px-3 text-[11px] font-bold tracking-wider text-zinc-500 uppercase">
+              <div className="mb-1.5 px-3 text-[11px] font-bold tracking-wider text-zinc-500 uppercase dark:text-zinc-400">
                 {g.title}
               </div>
               <ul className="flex flex-col gap-0.5">
@@ -84,7 +84,7 @@ export default function LektionenLayout({ children }: { children: React.ReactNod
                   <li key={l.slug}>
                     <Link
                       href={`/lektionen/${l.slug}`}
-                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-white hover:text-zinc-950"
+                      className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-white hover:text-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-white"
                     >
                       <span className="w-5 text-center">{l.icon}</span>
                       {l.label}

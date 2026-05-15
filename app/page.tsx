@@ -127,24 +127,24 @@ const stats = [
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-rose-50">
-      <div className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-fuchsia-300/40 blur-3xl" />
-      <div className="pointer-events-none absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-sky-300/40 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 left-1/4 h-96 w-96 rounded-full bg-emerald-300/30 blur-3xl" />
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-rose-50 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950">
+      <div className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-fuchsia-300/40 blur-3xl dark:bg-fuchsia-700/20" />
+      <div className="pointer-events-none absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-sky-300/40 blur-3xl dark:bg-sky-700/20" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/4 h-96 w-96 rounded-full bg-emerald-300/30 blur-3xl dark:bg-emerald-700/15" />
 
       {/* HERO */}
       <section className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 pt-16 pb-12 text-center sm:pt-24">
-        <span className="rounded-full border border-zinc-300 bg-white/80 px-4 py-1.5 text-xs font-semibold tracking-wider text-zinc-700 uppercase shadow-sm backdrop-blur">
+        <span className="rounded-full border border-zinc-300 bg-white/80 px-4 py-1.5 text-xs font-semibold tracking-wider text-zinc-700 uppercase shadow-sm backdrop-blur dark:border-zinc-700 dark:bg-zinc-800/70 dark:text-zinc-300">
           Interaktiv · auf Deutsch · ohne Anmeldung
         </span>
 
-        <h1 className="bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-rose-600 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent sm:text-7xl">
+        <h1 className="bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-rose-600 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent sm:text-7xl dark:from-indigo-400 dark:via-fuchsia-400 dark:to-rose-400">
           Kryptografie,
           <br />
           die man anfassen kann.
         </h1>
 
-        <p className="max-w-2xl text-lg text-zinc-700 sm:text-xl">
+        <p className="max-w-2xl text-lg text-zinc-700 sm:text-xl dark:text-zinc-300">
           Von Caesar bis Post-Quantum — jede Lektion zum Ausprobieren, mit
           aufklappbaren Tiefen-Boxen für Einsteiger:innen und Profis.
         </p>
@@ -152,19 +152,19 @@ export default function Home() {
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/lektionen/einleitung"
-            className="rounded-full bg-zinc-900 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-zinc-900/20 transition hover:scale-[1.02] hover:bg-zinc-800"
+            className="rounded-full bg-zinc-900 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-zinc-900/20 transition hover:scale-[1.02] hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:shadow-zinc-100/10 dark:hover:bg-white"
           >
             Bei null anfangen →
           </Link>
           <Link
             href="/lektionen"
-            className="rounded-full border border-zinc-300 bg-white/80 px-8 py-3.5 text-sm font-semibold text-zinc-800 shadow-sm backdrop-blur transition hover:border-zinc-900 hover:text-zinc-900"
+            className="rounded-full border border-zinc-300 bg-white/80 px-8 py-3.5 text-sm font-semibold text-zinc-800 shadow-sm backdrop-blur transition hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-800/70 dark:text-zinc-200 dark:hover:border-zinc-400 dark:hover:text-white"
           >
             Alle Lektionen
           </Link>
           <Link
             href="/lektionen/quiz"
-            className="rounded-full border border-zinc-300 bg-white/80 px-8 py-3.5 text-sm font-semibold text-zinc-800 shadow-sm backdrop-blur transition hover:border-zinc-900 hover:text-zinc-900"
+            className="rounded-full border border-zinc-300 bg-white/80 px-8 py-3.5 text-sm font-semibold text-zinc-800 shadow-sm backdrop-blur transition hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-800/70 dark:text-zinc-200 dark:hover:border-zinc-400 dark:hover:text-white"
           >
             Quiz 🧪
           </Link>
@@ -178,37 +178,37 @@ export default function Home() {
 
       {/* INTRO: Was ist Kryptografie? */}
       <section className="relative mx-auto max-w-3xl px-6 pb-16">
-        <div className="rounded-2xl border border-zinc-200 bg-white/80 p-8 shadow-sm backdrop-blur">
-          <h2 className="text-2xl font-bold tracking-tight text-zinc-900">
+        <div className="rounded-2xl border border-zinc-200 bg-white/80 p-8 shadow-sm backdrop-blur dark:border-zinc-700 dark:bg-zinc-800/70">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
             Was ist Kryptografie eigentlich?
           </h2>
-          <p className="mt-3 text-zinc-700 leading-relaxed">
+          <p className="mt-3 text-zinc-700 leading-relaxed dark:text-zinc-300">
             Kryptografie ist die Kunst, in einer Welt voller Lauscher, Fälscher
             und Hochstapler trotzdem <strong>sicher zu kommunizieren</strong>.
             Sie beantwortet im Kern drei Fragen:
           </p>
 
           <ul className="mt-5 space-y-3 text-left">
-            <li className="rounded-lg border border-indigo-200 bg-indigo-50/60 p-4">
-              <strong className="text-indigo-900">🔒 Vertraulichkeit</strong>
-              <span className="text-zinc-700"> — Kann jemand mitlesen?</span>
-              <div className="mt-1 text-sm text-zinc-600">
+            <li className="rounded-lg border border-indigo-200 bg-indigo-50/60 p-4 dark:border-indigo-800 dark:bg-indigo-950/40">
+              <strong className="text-indigo-900 dark:text-indigo-200">🔒 Vertraulichkeit</strong>
+              <span className="text-zinc-700 dark:text-zinc-300"> — Kann jemand mitlesen?</span>
+              <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
                 Klassisch lösen das Verfahren wie <em>Caesar</em>, <em>XOR</em>{" "}
                 oder modern <em>AES</em>.
               </div>
             </li>
-            <li className="rounded-lg border border-emerald-200 bg-emerald-50/60 p-4">
-              <strong className="text-emerald-900">✅ Integrität</strong>
-              <span className="text-zinc-700"> — Wurde unterwegs etwas verändert?</span>
-              <div className="mt-1 text-sm text-zinc-600">
+            <li className="rounded-lg border border-emerald-200 bg-emerald-50/60 p-4 dark:border-emerald-800 dark:bg-emerald-950/40">
+              <strong className="text-emerald-900 dark:text-emerald-200">✅ Integrität</strong>
+              <span className="text-zinc-700 dark:text-zinc-300"> — Wurde unterwegs etwas verändert?</span>
+              <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
                 Hier kommen <em>Hash-Funktionen</em> und <em>HMAC</em> ins
                 Spiel — Fingerabdrücke, an denen man Manipulation erkennt.
               </div>
             </li>
-            <li className="rounded-lg border border-rose-200 bg-rose-50/60 p-4">
-              <strong className="text-rose-900">🪪 Authentizität</strong>
-              <span className="text-zinc-700"> — Mit wem rede ich überhaupt?</span>
-              <div className="mt-1 text-sm text-zinc-600">
+            <li className="rounded-lg border border-rose-200 bg-rose-50/60 p-4 dark:border-rose-800 dark:bg-rose-950/40">
+              <strong className="text-rose-900 dark:text-rose-200">🪪 Authentizität</strong>
+              <span className="text-zinc-700 dark:text-zinc-300"> — Mit wem rede ich überhaupt?</span>
+              <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
                 <em>Digitale Signaturen</em>, <em>Zertifikate</em> und{" "}
                 Protokolle wie <em>OAuth</em> sorgen dafür, dass dein Gegenüber
                 auch wirklich der ist, der er behauptet zu sein.
@@ -216,7 +216,7 @@ export default function Home() {
             </li>
           </ul>
 
-          <p className="mt-6 text-zinc-700 leading-relaxed">
+          <p className="mt-6 text-zinc-700 leading-relaxed dark:text-zinc-300">
             Die spannende Wendung: das alles soll funktionieren,{" "}
             <strong>auch wenn der Angreifer das Verfahren selbst kennt</strong>.
             Geheim bleiben darf nur der Schlüssel — das nennt man das{" "}
@@ -230,10 +230,10 @@ export default function Home() {
       {/* LEARNING PATHS */}
       <section className="relative mx-auto max-w-5xl px-6 pb-20">
         <div className="mb-10 text-center">
-          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-100">
             Wo soll ich anfangen?
           </h2>
-          <p className="mt-2 text-zinc-600">
+          <p className="mt-2 text-zinc-600 dark:text-zinc-400">
             Drei Pfade durchs Material. Such dir aus, was zu dir passt.
           </p>
         </div>
@@ -242,7 +242,7 @@ export default function Home() {
           {paths.map((p) => (
             <div
               key={p.title}
-              className="relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-lg"
+              className="relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-lg dark:border-zinc-700 dark:bg-zinc-800/80 dark:hover:shadow-zinc-900/40"
             >
               <div className={`h-1 bg-gradient-to-r ${p.accent}`} />
               <div className="flex flex-1 flex-col p-6">
@@ -253,24 +253,24 @@ export default function Home() {
                     {p.icon}
                   </span>
                   <div>
-                    <h3 className="text-base font-bold text-zinc-900">{p.title}</h3>
-                    <p className="text-xs text-zinc-500">{p.audience}</p>
+                    <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100">{p.title}</h3>
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400">{p.audience}</p>
                   </div>
                 </div>
 
-                <p className="mt-4 text-sm text-zinc-700">{p.description}</p>
+                <p className="mt-4 text-sm text-zinc-700 dark:text-zinc-300">{p.description}</p>
 
                 <ol className="mt-5 flex flex-1 flex-col gap-1.5">
                   {p.steps.map((s, i) => (
                     <li key={s.slug}>
                       <Link
                         href={`/lektionen/${s.slug}`}
-                        className="group flex items-center gap-3 rounded-lg px-2.5 py-1.5 text-sm text-zinc-800 transition hover:bg-zinc-50"
+                        className="group flex items-center gap-3 rounded-lg px-2.5 py-1.5 text-sm text-zinc-800 transition hover:bg-zinc-50 dark:text-zinc-200 dark:hover:bg-zinc-700/60"
                       >
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-600 group-hover:bg-indigo-100 group-hover:text-indigo-700">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-600 group-hover:bg-indigo-100 group-hover:text-indigo-700 dark:bg-zinc-700 dark:text-zinc-300 dark:group-hover:bg-indigo-900/60 dark:group-hover:text-indigo-300">
                           {i + 1}
                         </span>
-                        <span className="font-medium group-hover:text-indigo-700 group-hover:underline">
+                        <span className="font-medium group-hover:text-indigo-700 group-hover:underline dark:group-hover:text-indigo-300">
                           {s.label}
                         </span>
                       </Link>
@@ -293,10 +293,10 @@ export default function Home() {
       {/* LANDSCAPE */}
       <section className="relative mx-auto max-w-5xl px-6 pb-20">
         <div className="mb-8 text-center">
-          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-100">
             Die ganze Landkarte
           </h2>
-          <p className="mt-2 text-zinc-600">
+          <p className="mt-2 text-zinc-600 dark:text-zinc-400">
             Sechs Themengebiete, von ganz einfach bis ziemlich tief.
           </p>
         </div>
@@ -305,35 +305,35 @@ export default function Home() {
           {landscape.map((group) => (
             <div
               key={group.title}
-              className="rounded-xl border border-zinc-200 bg-white/80 p-5 shadow-sm backdrop-blur"
+              className="rounded-xl border border-zinc-200 bg-white/80 p-5 shadow-sm backdrop-blur dark:border-zinc-700 dark:bg-zinc-800/70"
             >
-              <h3 className="text-base font-bold text-zinc-900">{group.title}</h3>
-              <p className="mt-1 text-sm text-zinc-600">{group.subtitle}</p>
+              <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-100">{group.title}</h3>
+              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{group.subtitle}</p>
               <ul className="mt-4 flex flex-col gap-2">
                 {group.items.map((item) => (
                   <li key={item.label} className="flex flex-col">
                     {item.href ? (
                       <Link
                         href={item.href}
-                        className="group flex items-center gap-2 rounded-md px-2 py-1.5 text-sm font-medium text-zinc-800 transition hover:bg-indigo-50 hover:text-indigo-900"
+                        className="group flex items-center gap-2 rounded-md px-2 py-1.5 text-sm font-medium text-zinc-800 transition hover:bg-indigo-50 hover:text-indigo-900 dark:text-zinc-200 dark:hover:bg-indigo-900/30 dark:hover:text-indigo-200"
                       >
-                        <span className="text-emerald-600">●</span>
+                        <span className="text-emerald-600 dark:text-emerald-400">●</span>
                         <span className="group-hover:underline">{item.label}</span>
-                        <span className="ml-auto text-xs text-zinc-400 group-hover:text-indigo-500">
+                        <span className="ml-auto text-xs text-zinc-400 group-hover:text-indigo-500 dark:text-zinc-500 dark:group-hover:text-indigo-300">
                           →
                         </span>
                       </Link>
                     ) : (
-                      <div className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-zinc-500">
-                        <span className="text-zinc-300">○</span>
+                      <div className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-zinc-500 dark:text-zinc-400">
+                        <span className="text-zinc-300 dark:text-zinc-600">○</span>
                         <span>{item.label}</span>
-                        <span className="ml-auto rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 text-[10px] font-semibold tracking-wider text-amber-800 uppercase">
+                        <span className="ml-auto rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 text-[10px] font-semibold tracking-wider text-amber-800 uppercase dark:border-amber-700 dark:bg-amber-950/50 dark:text-amber-300">
                           kommt noch
                         </span>
                       </div>
                     )}
                     {item.note ? (
-                      <span className="ml-6 text-xs text-zinc-500">{item.note}</span>
+                      <span className="ml-6 text-xs text-zinc-500 dark:text-zinc-500">{item.note}</span>
                     ) : null}
                   </li>
                 ))}
@@ -345,23 +345,23 @@ export default function Home() {
 
       {/* STATS */}
       <section className="relative mx-auto max-w-5xl px-6 pb-24">
-        <div className="grid grid-cols-2 gap-4 rounded-2xl border border-zinc-200 bg-white/70 p-8 shadow-sm backdrop-blur sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 rounded-2xl border border-zinc-200 bg-white/70 p-8 shadow-sm backdrop-blur sm:grid-cols-4 dark:border-zinc-700 dark:bg-zinc-800/60">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-rose-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl">
+              <div className="bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-rose-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl dark:from-indigo-400 dark:via-fuchsia-400 dark:to-rose-400">
                 {s.number}
               </div>
-              <div className="mt-1 text-xs font-semibold tracking-wider text-zinc-600 uppercase">
+              <div className="mt-1 text-xs font-semibold tracking-wider text-zinc-600 uppercase dark:text-zinc-400">
                 {s.label}
               </div>
             </div>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-zinc-500">
+        <p className="mt-8 text-center text-sm text-zinc-500 dark:text-zinc-400">
           Alle Lektionen laufen rein im Browser — kein Backend, keine Tracker,
           keine Anmeldung. Code unter{" "}
-          <Link href="/lektionen" className="text-indigo-700 underline">
+          <Link href="/lektionen" className="text-indigo-700 underline dark:text-indigo-400">
             /lektionen
           </Link>{" "}
           öffnen und loslegen.
