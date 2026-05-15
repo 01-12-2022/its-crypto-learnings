@@ -1,18 +1,62 @@
 import Link from "next/link";
-
-const highlights = [
-  { icon: "🔡", label: "Caesar", tint: "from-amber-400 to-rose-500", href: "/lektionen/caesar" },
-  { icon: "⊕", label: "XOR", tint: "from-fuchsia-500 to-violet-600", href: "/lektionen/xor" },
-  { icon: "📊", label: "Frequenz", tint: "from-sky-500 to-indigo-600", href: "/lektionen/frequenz" },
-  { icon: "🔑", label: "Diffie-Hellman", tint: "from-emerald-500 to-teal-600", href: "/lektionen/diffie-hellman" },
-  { icon: "🔐", label: "RSA", tint: "from-blue-600 to-cyan-500", href: "/lektionen/rsa" },
-  { icon: "#️⃣", label: "Hashes", tint: "from-orange-500 to-pink-600", href: "/lektionen/hash" },
-  { icon: "🪪", label: "OAuth", tint: "from-lime-500 to-emerald-600", href: "/lektionen/oauth" },
-  { icon: "🛡️", label: "HMAC", tint: "from-purple-600 to-indigo-700", href: "/lektionen/hmac" },
-];
+import { MiniCaesar } from "@/components/landing/MiniCaesar";
 
 type MapItem = { label: string; href?: string; soon?: boolean; note?: string };
 type MapGroup = { title: string; subtitle: string; items: MapItem[] };
+
+const paths: {
+  icon: string;
+  title: string;
+  audience: string;
+  description: string;
+  steps: { slug: string; label: string }[];
+  accent: string;
+}[] = [
+  {
+    icon: "🌱",
+    title: "Komplett neu",
+    audience: "Noch nie mit Krypto in Berührung gekommen.",
+    description:
+      "Wir starten ganz am Anfang: was Verschlüsselung überhaupt soll, dann das einfachste denkbare Verfahren.",
+    steps: [
+      { slug: "einleitung", label: "Was ist Kryptografie?" },
+      { slug: "caesar", label: "Caesar-Cipher" },
+      { slug: "frequenz", label: "Häufigkeitsanalyse" },
+      { slug: "hash", label: "Hash-Funktionen" },
+    ],
+    accent: "from-emerald-500 to-teal-600",
+  },
+  {
+    icon: "💻",
+    title: "Entwickler:in",
+    audience: "Kenne ich aus dem Job, will's mal richtig verstehen.",
+    description:
+      "Fokus auf moderne Bausteine, die du in echten Systemen siehst — AES, RSA, TLS, OAuth.",
+    steps: [
+      { slug: "symm-asymm", label: "Symmetrisch vs. asymmetrisch" },
+      { slug: "aes", label: "AES" },
+      { slug: "diffie-hellman", label: "Diffie-Hellman" },
+      { slug: "tls", label: "TLS & PKI" },
+      { slug: "oauth", label: "OAuth 2.0" },
+    ],
+    accent: "from-blue-500 to-indigo-600",
+  },
+  {
+    icon: "🧠",
+    title: "Tiefer rein",
+    audience: "Will Mathe, Geschichte, Stolperfallen.",
+    description:
+      "Die nicht-trivialen Themen: Angreifer-Modelle, Padding-Oracles, Side-Channels, Post-Quantum.",
+    steps: [
+      { slug: "kerckhoffs", label: "Angreifer & Kerckhoffs" },
+      { slug: "modi", label: "Betriebsmodi & Padding" },
+      { slug: "signaturen", label: "Digitale Signaturen" },
+      { slug: "ecc", label: "Elliptische Kurven" },
+      { slug: "post-quantum", label: "Post-Quantum" },
+    ],
+    accent: "from-fuchsia-500 to-purple-600",
+  },
+];
 
 const landscape: MapGroup[] = [
   {
@@ -74,60 +118,65 @@ const landscape: MapGroup[] = [
   },
 ];
 
+const stats = [
+  { number: "17", label: "Lektionen" },
+  { number: "6", label: "Themengebiete" },
+  { number: "100%", label: "interaktiv" },
+  { number: "0 €", label: "Anmeldung" },
+];
+
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-rose-50">
       <div className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full bg-fuchsia-300/40 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-sky-300/40 blur-3xl" />
+      <div className="pointer-events-none absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-sky-300/40 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/4 h-96 w-96 rounded-full bg-emerald-300/30 blur-3xl" />
 
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 py-16 text-center">
+      {/* HERO */}
+      <section className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 pt-16 pb-12 text-center sm:pt-24">
         <span className="rounded-full border border-zinc-300 bg-white/80 px-4 py-1.5 text-xs font-semibold tracking-wider text-zinc-700 uppercase shadow-sm backdrop-blur">
-          Interaktiv · Verständlich · Bunt
+          Interaktiv · auf Deutsch · ohne Anmeldung
         </span>
 
-        <h1 className="bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-rose-600 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent sm:text-6xl">
-          Kryptografie lernen
+        <h1 className="bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-rose-600 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent sm:text-7xl">
+          Kryptografie,
+          <br />
+          die man anfassen kann.
         </h1>
 
         <p className="max-w-2xl text-lg text-zinc-700 sm:text-xl">
-          Von der <strong className="text-zinc-900">Caesar-Verschiebung</strong> bis zu{" "}
-          <strong className="text-zinc-900">OAuth</strong> und{" "}
-          <strong className="text-zinc-900">Diffie-Hellman</strong> — alles zum
-          Ausprobieren, Verstehen und Üben.
+          Von Caesar bis Post-Quantum — jede Lektion zum Ausprobieren, mit
+          aufklappbaren Tiefen-Boxen für Einsteiger:innen und Profis.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link
-            href="/lektionen"
+            href="/lektionen/einleitung"
             className="rounded-full bg-zinc-900 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-zinc-900/20 transition hover:scale-[1.02] hover:bg-zinc-800"
           >
-            Zu den Lektionen →
+            Bei null anfangen →
+          </Link>
+          <Link
+            href="/lektionen"
+            className="rounded-full border border-zinc-300 bg-white/80 px-8 py-3.5 text-sm font-semibold text-zinc-800 shadow-sm backdrop-blur transition hover:border-zinc-900 hover:text-zinc-900"
+          >
+            Alle Lektionen
           </Link>
           <Link
             href="/lektionen/quiz"
-            className="rounded-full border border-zinc-300 bg-white px-8 py-3.5 text-sm font-semibold text-zinc-800 shadow-sm transition hover:border-zinc-900 hover:text-zinc-900"
+            className="rounded-full border border-zinc-300 bg-white/80 px-8 py-3.5 text-sm font-semibold text-zinc-800 shadow-sm backdrop-blur transition hover:border-zinc-900 hover:text-zinc-900"
           >
-            Quiz starten 🧪
+            Quiz 🧪
           </Link>
         </div>
 
-        <div className="mt-6 grid w-full max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
-          {highlights.map((h) => (
-            <Link
-              key={h.label}
-              href={h.href}
-              className={`rounded-xl bg-gradient-to-br ${h.tint} p-px shadow-md transition hover:scale-[1.03]`}
-            >
-              <div className="flex h-full flex-col items-center gap-1 rounded-[11px] bg-white/95 px-3 py-4 text-zinc-800">
-                <span className="text-2xl">{h.icon}</span>
-                <span className="text-sm font-semibold">{h.label}</span>
-              </div>
-            </Link>
-          ))}
+        {/* Interactive teaser */}
+        <div className="mt-6 w-full">
+          <MiniCaesar />
         </div>
-      </div>
+      </section>
 
-      {/* --- Intro: Was ist Kryptografie? --- */}
+      {/* INTRO: Was ist Kryptografie? */}
       <section className="relative mx-auto max-w-3xl px-6 pb-16">
         <div className="rounded-2xl border border-zinc-200 bg-white/80 p-8 shadow-sm backdrop-blur">
           <h2 className="text-2xl font-bold tracking-tight text-zinc-900">
@@ -175,30 +224,84 @@ export default function Home() {
             obscurity" (selbstausgedachte Geheimverfahren) so eine schlechte
             Idee.
           </p>
-
-          <p className="mt-4 text-zinc-700 leading-relaxed">
-            Die Reise auf dieser Seite geht von <strong>2000 Jahre alten
-            Tricks</strong> (die du auf Papier brechen kannst) bis zu den{" "}
-            <strong>Bausteinen deiner HTTPS-Verbindung</strong> — und jede
-            Lektion hat aufklappbare 🌱-, 🤔- und 🔬-Boxen, mit denen du
-            selber wählst, wie tief du reingehen willst.
-          </p>
         </div>
       </section>
 
-      {/* --- Themen-Landkarte --- */}
-      <section className="relative mx-auto max-w-5xl px-6 pb-24">
-        <div className="mb-8 text-center">
-          <h2 className="text-2xl font-bold tracking-tight text-zinc-900">
-            Die Landkarte
+      {/* LEARNING PATHS */}
+      <section className="relative mx-auto max-w-5xl px-6 pb-20">
+        <div className="mb-10 text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
+            Wo soll ich anfangen?
           </h2>
           <p className="mt-2 text-zinc-600">
-            So hängen die Themen zusammen. Manche Lektionen sind schon da,
-            andere kommen noch.
+            Drei Pfade durchs Material. Such dir aus, was zu dir passt.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {paths.map((p) => (
+            <div
+              key={p.title}
+              className="relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:shadow-lg"
+            >
+              <div className={`h-1 bg-gradient-to-r ${p.accent}`} />
+              <div className="flex flex-1 flex-col p-6">
+                <div className="flex items-center gap-3">
+                  <span
+                    className={`inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${p.accent} text-2xl text-white shadow`}
+                  >
+                    {p.icon}
+                  </span>
+                  <div>
+                    <h3 className="text-base font-bold text-zinc-900">{p.title}</h3>
+                    <p className="text-xs text-zinc-500">{p.audience}</p>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-sm text-zinc-700">{p.description}</p>
+
+                <ol className="mt-5 flex flex-1 flex-col gap-1.5">
+                  {p.steps.map((s, i) => (
+                    <li key={s.slug}>
+                      <Link
+                        href={`/lektionen/${s.slug}`}
+                        className="group flex items-center gap-3 rounded-lg px-2.5 py-1.5 text-sm text-zinc-800 transition hover:bg-zinc-50"
+                      >
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-600 group-hover:bg-indigo-100 group-hover:text-indigo-700">
+                          {i + 1}
+                        </span>
+                        <span className="font-medium group-hover:text-indigo-700 group-hover:underline">
+                          {s.label}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+
+                <Link
+                  href={`/lektionen/${p.steps[0].slug}`}
+                  className={`mt-6 inline-flex items-center justify-center rounded-full bg-gradient-to-r ${p.accent} px-4 py-2 text-sm font-semibold text-white shadow transition hover:scale-[1.02]`}
+                >
+                  Pfad starten →
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* LANDSCAPE */}
+      <section className="relative mx-auto max-w-5xl px-6 pb-20">
+        <div className="mb-8 text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
+            Die ganze Landkarte
+          </h2>
+          <p className="mt-2 text-zinc-600">
+            Sechs Themengebiete, von ganz einfach bis ziemlich tief.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {landscape.map((group) => (
             <div
               key={group.title}
@@ -238,18 +341,30 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
 
-        <p className="mt-10 text-center text-sm text-zinc-500">
-          Tipp: wenn du komplett neu bist, fang mit{" "}
-          <Link href="/lektionen/caesar" className="text-indigo-700 underline">
-            Caesar
+      {/* STATS */}
+      <section className="relative mx-auto max-w-5xl px-6 pb-24">
+        <div className="grid grid-cols-2 gap-4 rounded-2xl border border-zinc-200 bg-white/70 p-8 shadow-sm backdrop-blur sm:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <div className="bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-rose-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl">
+                {s.number}
+              </div>
+              <div className="mt-1 text-xs font-semibold tracking-wider text-zinc-600 uppercase">
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-8 text-center text-sm text-zinc-500">
+          Alle Lektionen laufen rein im Browser — kein Backend, keine Tracker,
+          keine Anmeldung. Code unter{" "}
+          <Link href="/lektionen" className="text-indigo-700 underline">
+            /lektionen
           </Link>{" "}
-          an und arbeite dich nach unten durch. Wenn du nur eine konkrete Frage
-          hast — z. B. „wie funktioniert HTTPS-Login?" — spring direkt zu{" "}
-          <Link href="/lektionen/oauth" className="text-indigo-700 underline">
-            OAuth
-          </Link>
-          .
+          öffnen und loslegen.
         </p>
       </section>
     </div>
