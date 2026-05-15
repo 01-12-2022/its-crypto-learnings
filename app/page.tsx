@@ -121,8 +121,8 @@ const landscape: MapGroup[] = [
 const stats = [
   { number: "17", label: "Lektionen" },
   { number: "6", label: "Themengebiete" },
+  { number: "~50", label: "Tiefen-Boxen" },
   { number: "100%", label: "interaktiv" },
-  { number: "0 €", label: "Anmeldung" },
 ];
 
 export default function Home() {
@@ -135,7 +135,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 pt-16 pb-12 text-center sm:pt-24">
         <span className="rounded-full border border-zinc-300 bg-white/80 px-4 py-1.5 text-xs font-semibold tracking-wider text-zinc-700 uppercase shadow-sm backdrop-blur dark:border-zinc-700 dark:bg-zinc-800/70 dark:text-zinc-300">
-          Interaktiv · auf Deutsch · ohne Anmeldung
+          Interaktiv · auf Deutsch · Uni-Lernprojekt
         </span>
 
         <h1 className="bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-rose-600 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent sm:text-7xl dark:from-indigo-400 dark:via-fuchsia-400 dark:to-rose-400">
@@ -359,12 +359,12 @@ export default function Home() {
         </div>
 
         <p className="mt-8 text-center text-sm text-zinc-500 dark:text-zinc-400">
-          Alle Lektionen laufen rein im Browser — kein Backend, keine Tracker,
-          keine Anmeldung. Code unter{" "}
+          Gruppenprojekt im Rahmen einer Uni-Veranstaltung. Alle Lektionen
+          laufen rein im Browser. Direkt zu den{" "}
           <Link href="/lektionen" className="text-indigo-700 underline dark:text-indigo-400">
-            /lektionen
-          </Link>{" "}
-          öffnen und loslegen.
+            Lektionen
+          </Link>
+          .
         </p>
       </section>
     </div>
