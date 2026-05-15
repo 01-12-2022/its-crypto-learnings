@@ -211,10 +211,10 @@ export default function LektionenPage() {
   return (
     <div className="flex flex-col gap-10">
       <header>
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-900">
+        <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
           Alle Lektionen
         </h1>
-        <p className="mt-2 text-zinc-700">
+        <p className="mt-2 text-zinc-700 dark:text-zinc-300">
           Wähle eine Lektion – jede ist eigenständig und interaktiv. Empfohlene
           Reihenfolge: von oben nach unten.
         </p>
@@ -223,15 +223,15 @@ export default function LektionenPage() {
       {categories.map((cat) => (
         <section key={cat.title} className="flex flex-col gap-4">
           <div>
-            <h2 className="text-lg font-bold text-zinc-900">{cat.title}</h2>
-            <p className="text-sm text-zinc-600">{cat.subtitle}</p>
+            <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{cat.title}</h2>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400">{cat.subtitle}</p>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {cat.lessons.map((l) => (
               <Link
                 key={l.slug}
                 href={`/lektionen/${l.slug}`}
-                className="group relative overflow-hidden rounded-xl border border-zinc-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-xl border border-zinc-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg dark:border-zinc-700 dark:bg-zinc-800 dark:hover:shadow-zinc-900/50"
               >
                 <div
                   className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${l.accent}`}
@@ -242,10 +242,10 @@ export default function LektionenPage() {
                   >
                     {l.icon}
                   </span>
-                  <span className="text-base font-semibold text-zinc-900 group-hover:text-zinc-950">
+                  <span className="text-base font-semibold text-zinc-900 group-hover:text-zinc-950 dark:text-zinc-100 dark:group-hover:text-white">
                     {l.label}
                   </span>
-                  <span className="text-sm text-zinc-600">{l.description}</span>
+                  <span className="text-sm text-zinc-600 dark:text-zinc-400">{l.description}</span>
                 </div>
               </Link>
             ))}
