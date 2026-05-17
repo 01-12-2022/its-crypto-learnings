@@ -357,15 +357,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        <p className="mt-8 text-center text-sm text-zinc-500 dark:text-zinc-400">
-          Gruppenprojekt im Rahmen einer Uni-Veranstaltung. Alle Lektionen
-          laufen rein im Browser. Direkt zu den{" "}
-          <Link href="/lektionen" className="text-indigo-700 underline dark:text-indigo-400">
-            Lektionen
-          </Link>
-          .
-        </p>
       </section>
     </div>
   );
